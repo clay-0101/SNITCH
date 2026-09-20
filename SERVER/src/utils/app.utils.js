@@ -13,3 +13,11 @@ export const generateTokens = (id , role) => ({
     refreshToken : generateRefreshToken(id , role),
     accessToken : generateAccessToken(id , role)
 })
+
+export const verifyAccessToken = (accessToken) => {
+    return jwt.verify(accessToken, config.accessTokenSecret)
+}
+
+export const verifyRefreshToken = (refreshToken) => {
+    return jwt.verify(refreshToken, config.refreshTokenSecret)
+}
