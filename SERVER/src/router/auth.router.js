@@ -13,6 +13,4 @@ auth_Router.get("/me", authenticate, getMe)
 
 auth_Router.get("/refresh", refresh)
 
-
-
 export default auth_Router

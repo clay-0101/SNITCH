@@ -35,14 +35,12 @@ export const registerUserValidator = [
         if (!errors.isEmpty()) {
             return res.status(400).json({
                 message: "Fill all the fileds carefully..",
-                errors
+                error : errors.array()
             })
         }
 
         next()
     }
-
-
 
 ]
 
