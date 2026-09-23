@@ -5,7 +5,7 @@ import { generateTokens, verifyRefreshToken } from "../utils/app.utils.js"
 export const registerUserController = async (req, res) => {
 
     try {
-        let { name, email, password, role } = req.body
+        let { name, email, password } = req.body
 
         let isUserAlreadyRegistered = await registeredUserModel.findOne({ email })
 
@@ -19,7 +19,6 @@ export const registerUserController = async (req, res) => {
             name,
             email,
             password: await bcrypt.hash(password, 10),
-            role
         })
 
         let { refreshToken, accessToken } = generateTokens(user._id, user.role)
