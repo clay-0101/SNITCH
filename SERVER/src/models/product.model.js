@@ -50,6 +50,10 @@ const productSchema = new mongoose.Schema({
             }
         }
     ],
+    pulished: {
+        type: Boolean,
+        default: false
+    },
 
     seller: {
         type: mongoose.Schema.Types.ObjectId,
